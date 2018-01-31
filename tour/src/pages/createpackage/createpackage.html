@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+      <ion-buttons end color="primary">
+          <button ion-button icon-only (click)="logout()">
+            <ion-icon name='md-log-out'>
+            </ion-icon>
+          </button>
+              </ion-buttons>
+            
+    <ion-title>
+      Tour De Pakistan
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="body">
+  <ion-card class="card-lgn">
+    <ion-card-content>
+        <ion-badge class="badge-title"><h1 class="title">Create Package</h1></ion-badge>
+        <input type="text" [(ngModel)]="user1.src" placeholder="Starting Point">
+        <input type="text" [(ngModel)]="user1.des" placeholder="Ending Point">
+        <input type="submit" (click)="calculateAndDisplayRoute()" value="Get Route">
+        <div id="map"></div>
+        <input type="text" [(ngModel)]="user1.points" placeholder="intermediate points">
+        <input type="text" [(ngModel)]="user1.per" placeholder="Stay Charges Per Hour">
+        <input type="text" [(ngModel)]="user1.far" placeholder="Fares">
+        <input type="submit" (click)="createpackage()" value="Add Package">
+        
+
+    </ion-card-content>
+  </ion-card>
+  
+</ion-content>

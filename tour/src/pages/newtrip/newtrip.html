@@ -1,0 +1,61 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Create Trip</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding class="container">
+  <ion-list>
+    <ion-item class="body">
+        <ion-label style="color:white;" class="fa fa-car" stacked>&nbsp;Trip Name</ion-label>
+        <ion-input style="color:white;" [(ngModel)]="user.tripname" type="text"></ion-input>
+      </ion-item>
+    </ion-list>
+          <ion-list>
+            <ion-item class="body">
+              <ion-label style="color:white;" class="fa fa-calendar">&nbsp;Start Date</ion-label>
+              <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="user.month"></ion-datetime>
+            </ion-item>
+        
+        
+            
+        
+            <ion-item class="body">
+              <ion-label style="color:white;" class="fa fa-calendar">&nbsp;Ends</ion-label>
+              <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="user.timeEnds"></ion-datetime>
+            </ion-item>
+
+          
+        
+            
+          </ion-list>
+        
+          <ion-grid>
+              <ion-row>
+                <ion-col col-6>
+                    <ion-item class="body">
+                        <ion-label style="color:white;" class="fa fa-map-marker" stacked>&nbsp;Starting Point</ion-label>
+                        <ion-input style="color:white;" type="text" [(ngModel)]="user.Start"></ion-input>
+                      </ion-item>
+                    </ion-col>
+                    <ion-col col-6>
+                      <ion-item class="body">
+                          <ion-label style="color:white;" class="fa fa-map-marker" stacked>&nbsp;Ending Point</ion-label>
+                          <ion-input style="color:white;" type="text" [(ngModel)]="user.End"></ion-input>
+                        </ion-item>
+                      </ion-col>
+                    </ion-row>
+                  </ion-grid>
+                    <ion-row>
+                        <ion-fab end>
+                          <button class="locate-btn" (click)="calculateAndDisplayRoute()" ion-fab>
+                            <ion-icon name="pin"></ion-icon>
+                          </button>
+                        </ion-fab>
+                      </ion-row>
+          <div id="map"></div>
+                      <button class="locate-btn" (click)="Alram()"ion-button full>Add To Trip</button>
+</ion-content>

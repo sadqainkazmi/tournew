@@ -1,0 +1,97 @@
+<!--
+  Generated template for the NearbyhotelsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>nearbyhotels</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <div #map id="map"></div>
+    <div style="width: 100%; height: 60%;">
+      <ion-list >
+
+          <ion-item-sliding>
+      
+      
+              <ion-item>
+                <ion-card>
+                  
+                  <ion-card-content>
+                    <ion-card-title>
+                     Hotel reservation
+                    </ion-card-title>
+              
+                  </ion-card-content>
+              
+                  <ion-item>
+                    <ion-icon class="fa fa-pencil" item-start ></ion-icon>
+                    Name
+                    <ion-badge item-end>{{result1.name}}</ion-badge>
+                  </ion-item>
+                  <ion-item>
+                    <ion-icon class="fa fa-map-marker" item-start></ion-icon>
+                    Address
+                    <ion-badge item-end>{{result1.formatted_address}}</ion-badge>
+                  </ion-item>
+              
+                  <ion-item>
+                    <ion-icon class="fa fa-star" item-start ></ion-icon>
+                   Rating
+                    <ion-badge item-end>{{result1.rating}}</ion-badge>
+                  </ion-item>
+                  <ion-item>
+                    <ion-icon class="fa fa-code" item-start ></ion-icon>
+                   Website
+                    <ion-badge item-end>{{result1.website}}</ion-badge>
+                  </ion-item>
+              
+                  <ion-item>
+                    <ion-icon class="fa fa-phone" item-start ></ion-icon>
+                    Phone Number
+                    <ion-badge item-end>{{result1.formatted_phone_number}}</ion-badge>
+                  </ion-item>      
+                </ion-card>
+              
+        
+              </ion-item>
+        
+        
+              <ion-item-options side="right">
+                <button ion-button color="primary"(click)="launchdialer(userphoner);">
+                  <ion-icon name="call"></ion-icon>
+                  Call Hotel<br>
+                  for Reservation
+                </button>
+               
+              </ion-item-options>
+              
+            </ion-item-sliding>
+          </ion-list>
+        
+          <!-- </ion-list> -->
+        
+
+
+
+
+        <!-- <ion-item *ngFor="let place of result1"> -->
+          <!-- <p>{{result1.name}}</p> -->
+
+         <!-- <p>{{result1.formatted_phone_number}}</p> -->
+         
+        <!-- </ion-item> -->
+     
+      <!-- <span [(ngModel)]="userphoner" ngDefaultControl ></span> -->
+      <!-- <div [innerHtml]="userphoner"></div>
+      <span>{{userphoner}}</span> -->
+    </div>
+</ion-content>

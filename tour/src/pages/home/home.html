@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-navbar hideBackButton="true">
+    <ion-title>
+      Tour De Pakistan
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding id="body">
+  <ion-segment color="light" [(ngModel)]="register">
+    <ion-segment-button value="tourist">
+      Tourist Registration
+    </ion-segment-button>
+    <ion-segment-button (click)="driverReg()" value="driver">
+      Driver Registration
+    </ion-segment-button>
+  </ion-segment>
+  <ion-card class="card-lgn">
+    <ion-card-content>
+        <h1 class="title">Sign Up</h1>
+        <input type="text" [(ngModel)]="user.fName" placeholder="First Name">
+        <input type="text"   [(ngModel)]="user.lName" placeholder="Last Name">
+        <input type="email" #email="ngModel"  required [(ngModel)]="user.mail"  pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+\.[a-zA-Z]$" placeholder="Email">
+        <div  [hidden]="email.valid || email.pristine" class="alert alert-danger help-block">
+          <div [hidden]="!email.hasError('pattern')">Email format should be
+            <small><b>joe@abc.com</b></small>
+          </div>
+        </div>
+        <input type="text"  #Rnumber="ngModel" required [(ngModel)]="user.num" pattern="^[0-9]{4}([0-9]{7}|[0-9\\-\\s]{8})$" placeholder="Phone Number">
+        <div  [hidden]="Rnumber.valid || Rnumber.pristine" class="alert alert-danger help-block">
+          <div [hidden]="!Rnumber.hasError('pattern')">Phone Number should be start with Your Country Code
+            <small><b>e.g : 923312345678</b></small>
+          </div>
+          </div>
+        <input type="password" #password [(ngModel)]="user.password" placeholder="Password">
+        <input type="submit" [disabled]="!user.fName || !user.num || !user.lName || !user.mail || !user.password" (click)="getIn()" value="Get in there">
+        <a style="cursor:pointer;" (click)="touristsLgn()" class="sign-in-link">Already have an account? Sign In here!</a>
+
+
+
+
+
+        <div class="row" >
+            <div class="col" >
+                <button class="fa fa-facebook" ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+            </div>
+            <div  class="col">
+                <button class="fa fa-twitter" ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+            </div>
+            <div  class="col">
+                <button class="fa fa-google" ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+            </div>
+        </div>
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

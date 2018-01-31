@@ -1,0 +1,29 @@
+<!--
+  Generated template for the NearbystoresPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>nearbystores</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div #map id="map"></div>
+    <div style="width: 100%; height: 60%;">
+      <ion-list *ngFor="let user1 of users ">
+       <p> AKFEC</p>
+        <ion-item *ngFor="let place of places ">
+        
+          <p ><img [src]="place.icon"></p>
+       
+        </ion-item>
+      </ion-list>
+    </div>
+
+</ion-content>

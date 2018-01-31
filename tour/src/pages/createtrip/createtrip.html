@@ -1,0 +1,75 @@
+<!--
+  Generated template for the CreatetripPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar hideBackButton="true">
+      <ion-buttons end color="primary">
+          <button ion-button icon-only (click)="logout()">
+            <ion-icon name='md-log-out'>
+            </ion-icon>
+          </button>
+              </ion-buttons>
+            
+    <ion-title>Your Trip</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    <div class="header">
+      
+        <div id="slider">
+        <figure>
+        <img src="assets/ayan-valley.jpg" alt>
+        <img src="assets/lake-slide.jpg" alt>
+        <img src="assets/hunza-slide.jpg" alt>
+        <img src="assets/slide.jpg" alt>
+        <img src="assets/valley-slide.jpg" alt>
+        </figure>
+        </div>
+          </div>
+  <div class="trip">
+    <ion-row>
+      <ion-col>
+        Add To Your Trip
+      </ion-col>
+
+      <ion-col>
+        <ion-buttons end>
+          <a style="cursor:pointer;" (click)="createTrip()">Create Trip</a>
+        </ion-buttons>
+      </ion-col>
+    </ion-row>
+  </div>
+  <div class="body">
+    <ion-row>
+      <ion-col>
+        <button class="reservations" (click)="getPackages();"ion-button><p class="res-text">Reservations</p></button>
+      </ion-col>
+      <ion-col>
+        <button class="driver-details" (click)="getDetails();" ion-button><p class="res-text">Driver Details</p></button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col>
+          <button class="nearby-hotels" (click)="getHots();" ion-button><p class="res-text">Nearby Hotels</p></button>
+        </ion-col>
+        <ion-col>
+          <button class="nearby-restaurants" (click)="getRes();" ion-button><p class="res-text">Nearby Restaurants</p></button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col>
+            <button class="nearby-stores"  (click)="getStores();" ion-button><p class="res-text">Nearby Stores</p></button>
+          </ion-col>
+          <ion-col>
+            <button class="nearby-hospitals" (click)="getHos();" ion-button><p class="res-text">Nearby Hospitals</p></button>
+          </ion-col>
+        </ion-row>
+  </div>
+</ion-content>

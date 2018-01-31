@@ -1,0 +1,103 @@
+<ion-header>
+    <ion-navbar hideBackButton="true">
+      <ion-title>
+        Tour De Pakistan
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+
+  <ion-content padding id="body">
+    <ion-segment color="light" [(ngModel)]="register">
+      <ion-segment-button (click)="touristReg()" value="tourist">
+        Tourist Registration
+      </ion-segment-button>
+      <ion-segment-button value="driver">
+        Driver Registration
+      </ion-segment-button>
+    </ion-segment>
+   
+    <ion-card class="card-lgn">
+        
+      <ion-card-content>
+
+          <form novalidate #regForm="ngForm">
+
+          <h1 class="title">Sign Up</h1>
+
+          <ion-input type="text" [(ngModel)]="user.fName" 
+           placeholder="First Name*">
+          </ion-input>
+
+          <ion-input type="text" [(ngModel)]="user.lName" #userlast="ngModel"
+          [error]="userlast.invalid && submitted" errorMessage="At least 2 characters required" minlength="5" 
+          required  placeholder="Last Name">
+          </ion-input>
+
+          <ion-input type="text" [(ngModel)]="user.linum" #li="ngModel" 
+          [error]="li.invalid && submitted" errorMessage="Required"
+           minlength="6" required  placeholder="License Number">
+          </ion-input>
+
+          <ion-input type="text" [(ngModel)]="user.jeepnum" #jeep="ngModel" 
+          [error]="jeep.invalid && submitted" errorMessage="Required" 
+          minlength="5" required  placeholder="Jeep Number*">
+          </ion-input>
+
+          <ion-input type="submit" (click)="presentActionSheet()" value="Upload Picture">
+          </ion-input>
+
+          <ion-input type="text" [(ngModel)]="user.contact"  #Rnumber="ngModel" 
+          [error]="Rnumber.invalid && submitted" errorMessage="Required" required 
+          pattern="^[0-9]{4}([0-9]{7}|[0-9\\-\\s]{8})$" placeholder="Contact*">
+          <div  [hidden]="Rnumber.valid || Rnumber.pristine" class="alert alert-danger help-block">
+            <div [hidden]="!Rnumber.hasError('pattern')">Phone Number should be start with Your Country Code 
+              <small><b>e.g : 923312345678</b></small>
+            </div>
+          </div>
+        </ion-input>
+
+          <ion-input type="text" [(ngModel)]="user.fNum"  #number="ngModel"
+           [error]="number.invalid && submitted" errorMessage="Required" required 
+           pattern="^[0-9]{4}([0-9]{7}|[0-9\\-\\s]{8})$" placeholder="Reference Number*">
+          <div  [hidden]="number.valid || number.pristine" class="alert alert-danger help-block">
+            <div [hidden]="!number.hasError('pattern')">Phone Number should be start with Your Country Code
+              <small><b>e.g : 923312345678</b></small>
+            </div>  
+          </div>
+        </ion-input>
+
+          <!-- <input type="text"  [(ngModel)]="user.fNum" placeholder="Reference Number*"> -->
+          
+          <ion-input type="password"  [(ngModel)]="user.password" #pass="ngModel" minlength="6" 
+          required data-password-toggle="true" [error]="pass.invalid && submitted" 
+          errorMessage="At least 6 characters required" placeholder="Password">
+          </ion-input>
+           
+          <ion-input type="submit" 
+          [disabled]="!user.fName || !user.lName || !user.fNum|| !user.linum || !user.contact ||!user.password"
+          (click)="start()" value="Get in there">
+          </ion-input>    
+         
+          <a style="cursor:pointer;" (click)="driverLgn()" class="sign-in-link">Already have an account? Sign In here!</a>
+
+
+
+
+          <div class="row" >
+              <div class="col" >
+                  <button class="fa fa-facebook" ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+              </div>
+              <div  class="col">
+                  <button class="fa fa-twitter" ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+              </div>
+              <div  class="col">
+                  <button class="fa fa-google" ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+              </div>
+          </div>
+          </form>
+      </ion-card-content>
+    </ion-card>
+
+  </ion-content>
+
+

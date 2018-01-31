@@ -1,0 +1,41 @@
+<ion-header>
+    <ion-navbar hideBackButton="true">
+      <ion-title>
+        Tour De Pakistan
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+
+  <ion-content padding id="body">
+      <ion-grid style="height: 100%">
+          <ion-row justify-content-center align-items-center style="height: 100%">
+    <ion-card class="card-lgn">
+      <ion-card-content>
+          <h1 class="title">Sign In</h1>
+          <input type="email" #email="ngModel"  required [(ngModel)]="user.mail"  pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+\.[a-zA-Z]$" placeholder="Email">
+          <div  [hidden]="email.valid || email.pristine" class="alert alert-danger help-block">
+            <div [hidden]="!email.hasError('pattern')">Email format should be
+              <small><b>joe@abc.com</b></small>
+            </div>
+          </div>
+          <input type="password" [(ngModel)]="user.pass" placeholder="Password">
+          <input type="submit"   [disabled]=" !user.mail || !user.pass " (click)="getIn()" value="Get in there">
+
+          <div class="row" >
+              <div class="col" >
+                  <button class="fa fa-facebook" ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+              </div>
+              <div  class="col">
+                  <button class="fa fa-twitter" ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+              </div>
+              <div  class="col">
+                  <button class="fa fa-google" ion-fab><ion-icon name="logo-facebook"></ion-icon></button>
+              </div>
+          </div>
+
+      </ion-card-content>
+    </ion-card>
+    </ion-row>
+    </ion-grid>
+
+  </ion-content>

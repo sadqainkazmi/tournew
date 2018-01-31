@@ -1,0 +1,112 @@
+page-createtrip {
+    .scroll-content{
+        background-color:lightyellow;
+    }
+    
+    .header
+    {
+        width: 100%;
+    }
+    .bottom-left {
+        position: absolute;
+        bottom: 8px;
+        left: 16px;
+        color: rgba(124, 190, 177, 0.986);
+    }
+    .reservations
+    {
+        background-image: url('../assets/jeep-res.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 102%;
+        height: 126px;
+        background-color: #AF3132;
+    
+    }
+    .res-text
+    {
+        position: absolute;
+        bottom: -14px;
+        width: 100%;
+        left: 0%;
+        vertical-align: text-bottom;
+        color: white;
+    }
+    .driver-details
+    {
+        width: 100%;
+        height: 176px;
+        background-image: url('../assets/car-details.ico');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: #82B634;
+    }
+    .nearby-hotels
+    {
+        width: 102%;
+        height: 178px;
+        background-image: url('../assets/hotel-res.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-top: -55px;
+    }
+    .nearby-restaurants
+    {
+        background-image: url('../assets/restaurant.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        height: 130px;
+        margin-top: -5px;
+    }
+    .nearby-stores
+    {
+        
+        background-image: url('../assets/nearby-store.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 102%;
+        height: 150px;
+        margin-top: -5px;
+        background-color: #F37873;
+    }
+    .nearby-hospitals
+    {
+        width: 100%;
+        height: 150px;
+        background-image: url('../assets/nearby-hospital.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-top: -5px;
+        background-color:#275473;
+    }
+    .trip
+    {
+        height: 25px;
+        color: lightslategrey;
+    }
+    @keyframes slidy {
+        0% { left: 0%; }
+        20% { left: 0%; }
+        25% { left: -100%; }
+        45% { left: -100%; }
+        50% { left: -200%; }
+        70% { left: -200%; }
+        75% { left: -300%; }
+        95% { left: -300%; }
+        100% { left: -400%; }
+        }
+        
+        body { margin: 0; } 
+        div#slider { overflow: hidden; }
+        div#slider figure img { width: 20%; float: left; }
+        div#slider figure { 
+          position: relative;
+          width: 500%;
+          margin: 0;
+          left: 0;
+          text-align: left;
+          font-size: 0;
+          animation: 30s slidy infinite; 
+        }
+}
